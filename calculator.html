@@ -34,92 +34,52 @@
                         <div class="form-items">
                             <h3>Calculate your calories</h3>
                             <p>Fill in the data below.</p>
-                            <form class="requires-validation" novalidate>
-        
-                                <div class="col-md-12">
-                                    <input class="form-control" type="text" name="name" placeholder="Full Name" required>
-                                </div>
-        
-                                <!-- <div class="col-md-12">
-                                    <input class="form-control" type="email" name="email" placeholder="E-mail Address" required>
-                                        <div class="valid-feedback">Email field is valid!</div>
-                                        <div class="invalid-feedback">Email field cannot be blank!</div>
-                                </div> -->
-        
-                                <!-- <div class="col-md-12">
-                                    <select class="form-select mt-3" required>
-                                            <option selected disabled value="">Position</option>
-                                            <option value="jweb">Junior Web Developer</option>
-                                            <option value="sweb">Senior Web Developer</option>
-                                            <option value="pmanager">Project Manager</option>
-                                    </select>
-                                    <div class="valid-feedback">You selected a position!</div>
-                                    <div class="invalid-feedback">Please select a position!</div>
-                                </div> -->
+                            <form id="calorie-calculate">
         
         
                                 <div class="col-md-12">
-                                    <input class="form-control" type="text" name="age" placeholder="Age" required>
-                                    <div class="valid-feedback">Age field is valid!</div>
-                                    <div class="invalid-feedback">Age field cannot be blank!</div>
+                                    <input class="form-control" type="number" id="age" placeholder="Age" required>
                                 </div>
         
                                 <div class="col-md-12">
-                                <input class="form-control" type="text" name="height" placeholder="Height" required>
-                                    <div class="valid-feedback">Height field is valid!</div>
-                                    <div class="invalid-feedback">Height field cannot be blank!</div>
+                                <input class="form-control" type="number" id="height" placeholder="Weight in centimeters" required>
+                                    
                                 </div>
         
                                 <div class="col-md-12">
-                                <input class="form-control" type="text" name="weight" placeholder="Weight" required>
-                                    <div class="valid-feedback">Weight field is valid!</div>
-                                    <div class="invalid-feedback">Weight field cannot be blank!</div>
+                                <input class="form-control" type="number" id="weight" placeholder="Height in kilograms" required>
+                                
                                 </div>
         
         
                                 <div class="col-md-12 mt-3">
-                                <label class="mb-3 mr-1" for="gender">Gender: </label>
+                                <label class="btn-gender" for="gender">Gender: </label>
         
                                 <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
-                                <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
+                                <label class="btn-gender" for="male">Male</label>
         
                                 <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
-                                <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
+                                <label class="btn-gender" for="female">Female</label>
                                 </div>
         
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                                    <label class="form-check-label">I confirm that all data are correct</label>
-                                    <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
-                                </div>
-                        
-        
+                              
                                 <div class="form-button mt-3">
-                                    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                                    <button id="submit" type="submit" value=Calculate class="btn btn-primary">Calculate</button>
                                 </div>
 
-                                <!-- javascript program for validation -->
-                                <script type="text/javascript">
-                                    function () {
-                                        'use strict'
-                                        const forms = document.querySelectorAll('.requires-validation')
-                                        Array.from(forms)
-                                        .forEach(function (form) {
-                                        form.addEventListener('submit', function (event) {
-                                            if (!form.checkValidity()) {
-                                            event.preventDefault()
-                                            event.stopPropagation()
-                                            }
-
-                                            form.classList.add('was-validated')
-                                        }, false
-                                        }
-                                        }
-
-                                </script>
-
-                            
+                                <div>
+                             
                             </form>
+
+                            <!-- result -->
+                            <div id="results" class="pt-4">
+                                <h5>Total Calories</h5>
+                                <div class="form-group">
+                                  <div class="input-group">
+                                    <input type="number" class="form-control" id="total-calories" disabled>
+                                  </div>
+                                </div>                       
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -127,19 +87,12 @@
         </div>
 
 
+        <!-- javascript program for validation -->
 
-
-
-
-
-
-
-
-
-
-
-
-
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="app.js"></script>
 
 
 
